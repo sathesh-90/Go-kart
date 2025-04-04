@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ece9e6, #ffffff);
+            overflow-y: auto;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+        }
+        
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0077b5;
+            margin-bottom: 10px;
+        }
+        
+        .name {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #333;
+        }
+        
+        .domain, .work {
+            font-size: 16px;
+            color: #666;
+            margin: 5px 0;
+        }
+        
+        .social-links {
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        
+        .linkedin {
+            background-color: #0077b5;
+        }
+        
+        .instagram {
+            background-color: #E4405F;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.8;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h2 class="name">John Doe</h2>
+            <p class="domain">Web Developer</p>
+            <p class="work">Company: Tech Solutions</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/g-navya-sree-712723305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/the_rishi__15?igsh=anB5NjFkeGhnNmF4" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h2 class="name">Jane Smith</h2>
+            <p class="domain">Graphic Designer</p>
+            <p class="work">Company: Creative Designs</p>
+            <div class="social-links">
+                <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h2 class="name">Mike Johnson</h2>
+            <p class="domain">Data Analyst</p>
+            <p class="work">Company: Data Insights</p>
+            <div class="social-links">
+                <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h2 class="name">Sarah Lee</h2>
+            <p class="domain">Marketing Manager</p>
+            <p class="work">Company: Growth Hub</p>
+            <div class="social-links">
+                <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h2 class="name">David Brown</h2>
+            <p class="domain">Software Engineer</p>
+            <p class="work">Company: CodeMasters</p>
+            <div class="social-links">
+                <a href="#" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

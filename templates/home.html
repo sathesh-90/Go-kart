@@ -1,0 +1,89 @@
+
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">  <div class="slider" style="width: 100%; max-width: 100%; position: relative; overflow: hidden;">
+    <div class="slides" style="display: flex; transition: transform 1s ease-in-out;">
+		<img src="{% static 'images/banners/Banner.jpg' %}" alt="Image 1" style="width: 100%; height: auto; object-fit: cover;">
+      <img src="{% static 'images/banners/Ban.jpg' %}" alt="Image 2" style="width: 100%; height: auto; object-fit: cover;">
+      <!-- Add more images as needed -->
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    const images = document.querySelectorAll('.slides img');
+    const totalImages = images.length;
+
+    function showNextSlide() {
+      index = (index + 1) % totalImages; // Loop back to the first image after the last one
+      const offset = -index * 100; // Shift images to the left
+      document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+    }
+
+    // Change slide every 3 seconds (3000ms)
+    setInterval(showNextSlide, 3000);
+
+    // Initialize by showing the first slide
+    showNextSlide();
+  </script>
+</div>
+
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+<div class="container">
+
+<header class="section-heading">
+	<a href="{% url 'store' %}" class="btn btn-outline-primary float-right">See all</a>
+	<h3 class="section-title">Popular products</h3>
+</header><!-- sect-heading -->
+
+
+<div class="row">
+	{% for product in products %}
+	<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.images.url }}"> </a>
+			<figcaption class="info-wrap">
+				<a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
+				<div class="price mt-1">$ {{ product.price }}</div> <!-- price-wrap.// -->
+				<div class="rating-star">
+					<span>
+						<i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+						<i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+						</span>
+				</div>
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	{% endfor %}
+</div> <!-- row.// -->
+
+</div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+
+
+
+
+
+
+{% endblock %}
